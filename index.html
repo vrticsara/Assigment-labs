@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Navigation Bar</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sara's movie blog</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#hindi-movies">Hindi Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#chinese-movies">Chinese Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#korean-movies">Korean Movies</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+</main>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara's movie blog</title>
+</head>
+    <main>
+        <h1 class="heading">Popular movies in Asia</h1>
+    </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara's movie blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            background-color:#add8e6;
+            color: #00008b;
+        }
+        .heading {
+            color:#00008b;
+            text-align: center;
+            margin: 20px 0;
+        }
+        header {
+            background-color:#00008b;
+            color: #add8e6
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #00008b;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #add8e6;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #00008b;
+        }
+        main {
+            padding: 20px;
+        }
+        h2 {
+            color:#00008b;
+        }
+        .city-select {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>  
+
+    <header>
+        <div class="city-select">
+            <label for="city">Select origin:</label>
+            <select id="city" onchange="navigateToCity()">
+                <option value="sarajevo">Hindi movies</option>
+                <option value="tuzla">Chinese movies</option>
+                <option value="mostar">Korean movies</option>
+                <option value="All">All movies</option>
+            </select>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#hindi-movies">Hindi movies</a>
+        <a href="chinese-movies">Chinese Movies</a>
+        <a href="korean-movies">Korean movies</a>
+    </nav>
+    <main>
+        <section id="hindi-movies">
+            <h2>Hindi movies</h2>
+            </section>
+    
+        <section id="chinese-movies">
+            <h2>Chinese movies</h2>
+             </section>
+        
+        <section id="korean-movies">
+            <h2>Korean movies</h2>
+            </section>
+    </main>
+    
+    <script>
+        function navigateToMovie() {
+            var selectedMovie = document.getElementById("movie").value;
+            if (selectedMovie === "Hindi movies") {
+                window.location.href = "#hindi-movies";
+            } else if (selectedMovie === "Chinese movies") {
+                window.location.href = "#chinese-movies";
+            } else if (selectedMovie === "Korean") {
+                window.location.href = "#korean-movies";
+            } else {
+            }
+        }
+    </script>
+    
+    </body>
+    </html>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Movies</title>
+    <style>
+        .movie-sections {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #add8e6;
+            padding: 20px;
+        }
+
+        section {
+            flex: 1 1 30%;
+            padding: 10px;
+            background-color: #fff;
+            color: #00008b;
+            border-radius: 8px;
+            margin: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .movie-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .movie-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .movie-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            padding-top: 60px;
+        }
+        .modal-content {
+            margin: auto;
+            padding: 20px;
+            background-color: #fefefe;
+            border-radius: 5px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        
+      
+    <meta charset="UTF-8">
+        
+      
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    <title>Sara's movie blog</title>
+    <link stylehref="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+
+            footer {  
+            text-align: center;
+            padding: 10px;
+            background-color: #00008b; 
+            color: #add8e6 ;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3); 
+        }
+            .footer-link {
+                color: #add8e6;
+                text-decoration: cursive ;
+                margin: 0 10px;
+                text-align: center;
+            }
+            .footer-link:hover {
+                text-decoration: underline;
+                text-align: center;
+            }
+            .app-icons {
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            .app-icons img {
+                width: 40px;
+                height: auto;
+                margin: 0 10px;
+                cursor: pointer;
+                text-align: center;
+            }
+        </style> 
+    </head>
+    <body>
+        <footer>
+                <div class="row">
+                    <div class="col-md-12 text-start text-align center">
+                        <a href="mailto:amela.vatres@stu.ibu.edu.ba" class="footer-link">Write recommendations</a>
+                        <p> Foundation of Web design </p>
+                        <p> Sara Vrtić </p>
+                    </div>
+        
+                    <div class="col-md-12 text-end text-align center">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <style>
+            .footer-center {
+    text-align: center;
+    margin-top: 20px;
+}
+        </style>
+        
