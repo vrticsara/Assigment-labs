@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div class="registration">
+        <h1>Registration</h1>
+        <form action="https://jsonplaceholder.typicode.com/posts" method="POST">
+
+            <p>Nickname:</p>
+            <input type="text" name="nickname" placeholder="Nickname" required minlength="3" maxlength="15">
+
+            <p>Username:</p>
+            <input type="text" name="username" placeholder="Username" required minlength="5" maxlength="20">
+
+            <p>Email:</p>
+            <input type="email" name="email" placeholder="Email" required>
+            
+            <p class="text-email">Leave your email for weekly movies recommendations</p>
+
+            <p>Password:</p>
+            <input type="password" name="password" placeholder="Password" required minlength="8">
+
+            <p>Confirm Password:</p>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required minlength="8">
+
+            <p>Age:</p>
+            <input type="number" name="age" placeholder="Age" min="18" max="100" required>
+
+            <p>Gender:</p>
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <p>Phone Number:</p>
+            <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+
+            <p>
+                <input type="checkbox" name="terms" required> I agree to the terms and conditions
+            </p>
+
+            <p>Preferred Contact Method:</p>
+            <input type="radio" name="contact_method" value="email" required> Email
+            <input type="radio" name="contact_method" value="phone" required> Phone
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
