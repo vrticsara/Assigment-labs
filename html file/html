@@ -227,8 +227,7 @@
     <body>
         <footer>
                 <div class="row">
-                    <div class="col-md-12 text
-                    -start text-align center">
+                    <div class="col-md-12 text-start text-align center">
                         <a href="mailto:amela.vatres@stu.ibu.edu.ba" class="footer-link">Write recommendations</a>
                         <p> Foundation of Web design </p>
                         <p> Sara Vrtić </p>
@@ -245,4 +244,3 @@
     margin-top: 20px;
 }
         </style>
-        
