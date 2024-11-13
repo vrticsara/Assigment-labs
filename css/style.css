@@ -9,8 +9,20 @@ header a {
     text-decoration: none;
 }
 
+.custom-blue {
+    background-color: #00008b; 
+}
+
 header a:hover {
     text-decoration: underline;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link-contact {
+    margin-right: 23px;
 }
 
 .footer-center {
@@ -49,4 +61,59 @@ footer {
     margin: 0 10px;
     cursor: pointer;
     text-align: center;
+}
+
+.movie-sections {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background-color: #add8e6;
+            padding: 20px;
+}
+
+section {
+            flex: 1 1 30%;
+            padding: 10px;
+            background-color: #fff;
+            color: #00008b;
+            border-radius: 8px;
+            margin: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.movie-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+}
+
+.movie-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.movie-item img:hover {
+            transform: scale(1.05);
+}
+
+.col-md-12-text-start-text-align-center {
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .image-logo {
+        width: 80%;
+        height: 45%;
+    }
+}
+
+.image-logo {
+    border-radius: 69px;
 }
