@@ -6,6 +6,31 @@
     <title>Sara's Movie Blog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .category-content {
+            display: none;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .movie-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .movie-item img {
+            width: 50px;
+            height: 75px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .movie-item a {
+            color: darkblue;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark custom-blue">
@@ -35,63 +60,116 @@
 
 <main>
     <section id="hindi-movies">
-        <h2>Hindi Movies</h2>
+        <h2 onclick="toggleContent('hindi-content')">Hindi Movies</h2>
+        <div id="hindi-content" class="category-content">
+            <div class="movie-item">
+                <img src="path/to/hindi-movie1.jpg" alt="Hindi Movie 1">
+                <a href="https://link-to-hindi-movie1.com" target="_blank">Hindi Movie 1</a>
+            </div>
+            <div class="movie-item">
+                <img src="path/to/hindi-movie2.jpg" alt="Hindi Movie 2">
+                <a href="https://link-to-hindi-movie2.com" target="_blank">Hindi Movie 2</a>
+            </div>
+        </div>
     </section>
 
     <section id="chinese-movies">
-        <h2>Chinese Movies</h2>
+        <h2 onclick="toggleContent('chinese-content')">Chinese Movies</h2>
+        <div id="chinese-content" class="category-content">
+            <div class="movie-item">
+                <img src="path/to/chinese-movie1.jpg" alt="Kun in the Distant Ocean">
+                <a href="https://kisskh.co/Drama/Kun-in-the-Distant-Ocean?id=8742" target="_blank">Kun in the Distant Ocean</a>
+            </div>
+            <div class="movie-item">
+                <img src="path/to/chinese-movie1.jpg" alt="The Battle at Lake Changjin">
+                <a href="https://www.imdb.com/title/tt13462900/" target="_blank">The Battle at Lake Changjin</a>
+            </div>
+            <div class="movie-item">
+                <img src="path/to/chinese-movie1.jpg" alt="Upcoming summer">
+                <a href="https://kisskh.co/Drama/Upcoming-Summer?id=4432" target="_blank">Upcoming summer</a>
+            </div>
+            <div class="movie-item">
+              <img src="path/to/chinese-movie1.jpg" alt="One smile is very alluring">
+              <a href="https://kisskh.co/Drama/One-Smile-is-Very-Alluring?id=322" target="_blank">One smile is very alluring</a>
+             </div>
+            <div class="movie-item">
+              <img src="path/to/chinese-movie1.jpg" alt="Legends of the Naga Pearls">
+              <a href="https://kisskh.co/Drama/Legend-of-the-Naga-Pearls?id=622" target="_blank">Legends of the Naga Pearls</a>
+            </div>
+            <div class="movie-item">
+              <img src="path/to/chinese-movie1.jpg" alt="Better Days">
+              <a href="https://kisskh.co/Drama/Better-Days?id=955" target="_blank">Better Days</a>
+            </div>
+            <div class="movie-item">
+              <img src="path/to/chinese-movie1.jpg" alt="Enormous Legendary Fish">
+              <a href="https://kisskh.co/Drama/Enormous-Legendary-Fish?id=974" target="_blank">Enormous Legendary Fish</a>
+            </div>
+            <div class="movie-item">
+              <img src="path/to/chinese-movie1.jpg" alt="Ten years of loving you">
+              <a href="https://kisskh.co/Drama/Ten-Years-of-Loving-You?id=4856" target="_blank">Ten years of loving you</a>
+            </div>
+            <div class="movie-item">
+              <img src="path/to/chinese-movie1.jpg" alt="The curse of Turandot">
+              <a href="https://kisskh.co/Drama/The-Curse-of-Turandot?id=4530" target="_blank">The curse of Turandot</a>
+            </div>
+            <div class="movie-item">
+              <img src="path/to/chinese-movie2.jpg" alt="All these years">
+              <a href="https://kisskh.co/Drama/All-These-Years?id=7568https://link-to-chinese-movie2.com" target="_blank">All these years</a>
+            </div>
+        </div>
     </section>
     
     <section id="korean-movies">
-        <h2>Korean Movies</h2>
+        <h2 onclick="toggleContent('korean-content')">Korean Movies</h2>
+        <div id="korean-content" class="category-content">
+            <div class="movie-item">
+                <img src="path/to/korean-movie1.jpg" alt="Korean Movie 1">
+                <a href="https://link-to-korean-movie1.com" target="_blank">Korean Movie 1</a>
+            </div>
+            <div class="movie-item">
+                <img src="path/to/korean-movie2.jpg" alt="Korean Movie 2">
+                <a href="https://link-to-korean-movie2.com" target="_blank">Korean Movie 2</a>
+            </div>
+        </div>
     </section>
 
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>If you have any questions, feel free to reach out!</p>
-            <form>
-              <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" required>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="3" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <table class="tabela" width="700">
+      <h3 style="display: grid; place-items: center;">Favorite movies through years</h3>
+        <tr bgcolor="Blue">
+            <th width="100">2020</th>
+            <th width="100">2021</th>
+            <th width="100">2022</th>
+            <th width="100">2023</th>
+            <th width="100">2024</th>
+        </tr>
+        <tr bgcolor="lightblue" align="center">
+            <td><a href="https://kisskh.co/Drama/Better-Days?id=955" target="_blank">Better Days</a></td>
+            <td><a href="https://kisskh.co/Drama/Better-Days?id=955" target="_blank">Om Shanti Om</a></td>
+            <td><a href="https://kisskh.co/Drama/Better-Days?id=955" target="_blank">Sanam Re</a></td>
+            <td><a href="https://kisskh.co/Drama/Better-Days?id=955" target="_blank">Exhuma</a></td>
+            <td><a href="https://kisskh.co/Drama/Better-Days?id=955" target="_blank">The Handmaiden</a></td>
+        </tr>
+    </table>
 </main>
 
 <footer>
   <div class="row">
       <div class="col-md-12-text-start-text-align-center">
-          <a href="mailto:amela.vatres@stu.ibu.edu.ba" class="footer-link">Write recommendations</a>
+        <img src="/images/Screenshot 2024-11-11 165527.png" alt="logo" height="200" width="450" class="image-logo">
+         <a href="mailto:amela.vatres@stu.ibu.edu.ba" class="footer-link">Write recommendations</a>
           <p> Foundation of Web design </p>
           <p> Sara Vrtić </p>
-          <img src="/images/Screenshot 2024-11-11 165527.png" alt="logo" height="200" width="450" class="image-logo">
-      </div>
-
-      <div class="col-md-12 text-end text-align center">
-      </div>
+          </div>
   </div>
-</div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function toggleContent(contentId) {
+        var content = document.getElementById(contentId);
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
 
 </body>
 </html>

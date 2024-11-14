@@ -25,6 +25,19 @@ header a:hover {
     margin-right: 23px;
 }
 
+.tabela {
+    margin: auto;
+    padding: auto;
+    color: #000000;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.tabela h3 {
+    display: grid;
+    place-items: center;
+}
+
 .footer-center {
     text-align: center;
     margin-top: 20px;
@@ -34,15 +47,15 @@ footer {
     margin-top: auto;
     text-align: center;
     padding: 10px;
-    background-color: #00008b; 
-    color: #add8e6 ;
+    background-color: #7CD973; 
+    color: #00008b;
     position: relative;
     bottom: 0;
     width: 100%;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3); 
 }
 .footer-link {
-    color: #add8e6;
+    color: #00008b;
     text-decoration: cursive ;
     margin: 0 10px;
     text-align: center;
