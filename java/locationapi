@@ -1,0 +1,18 @@
+<script>
+    document.getElementById("location-button").addEventListener("click", function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                // Construct the Google Maps URL
+                const mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                window.open(mapUrl, "_blank"); // Open the map in a new tab
+            }, () => {
+                alert("Unable to retrieve your location.");
+            });
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+    });
+</script>

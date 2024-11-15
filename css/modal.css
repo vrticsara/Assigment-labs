@@ -42,26 +42,40 @@
   }
 
   .custom-blue {
-    background-color: #00008b;
+    background-color: #7CD973;
   }
   .footer-center {
     text-align: center;
     margin-top: 20px;
 }
+.animated-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.animated-button:hover {
+    background-color: #0056b3;
+}
+
 
 footer {  
     margin-top: auto;
     text-align: center;
     padding: 10px;
-    background-color: #00008b; 
-    color: #add8e6 ;
+    background-color: #7CD973; 
+    color: #00008b;
     position: relative;
     bottom: 0;
     width: 100%;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3); 
 }
 .footer-link {
-    color: #add8e6;
+    color: #00008b;
     text-decoration: cursive ;
     margin: 0 10px;
     text-align: center;
@@ -158,7 +172,7 @@ footer {
 }
 
 .custom-color {
-    background-color: #007f8b;
+    background-color: #182db7;
 }
 
 .nav-link {

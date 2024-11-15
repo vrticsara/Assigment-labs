@@ -1,7 +1,7 @@
 header {
     background-color: #00008b;
     color: #ffffff;
-    padding: 10px 0;
+    padding: 30px 0;
 }
 
 header a {
@@ -10,11 +10,32 @@ header a {
 }
 
 .custom-blue {
-    background-color: #00008b; 
+    background-color: #7CD973;
 }
 
 header a:hover {
     text-decoration: underline;
+}
+
+.video-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+.video-player {
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 6px; 
+}
+.video-title {
+    font-size: 2em;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px; 
 }
 
 .nav-link {
@@ -129,4 +150,18 @@ section {
 
 .image-logo {
     border-radius: 69px;
+}
+.location-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.location-button:hover {
+    background-color: #0056b3;
 }
