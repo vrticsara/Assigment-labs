@@ -33,7 +33,13 @@
                 <a class="nav-link" href="#korean-movies">Korean Movies</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/html file/contact.html">Contact</a>
+                <a class="nav-link" href="/html file/aboutme.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/html file/registrationform.html">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/html file/contact.html">VOTE</a>
               </li>
             </ul>
           </div>
@@ -45,28 +51,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h4>Get in touch</h4>
-                    <form id="contactForm">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your Name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput2" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="Enter your Email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
+                    <h4>Leave your info for 2025 movie election</h4>
+                    <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="was-validated">
+                      <div class="mb-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required minlength="3">
+                        <div class="invalid-feedback">Please enter a valid username (at least 3 characters).</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country:</label>
+                        <input type="text" class="form-control" id="country" name="country" placeholder="Enter your country" required>
+                        <div class="invalid-feedback">Please enter your country.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="movieVote" class="form-label">Which Movie Are You Voting for This Year?</label>
+                      <textarea class="form-control" id="movieVote" name="movieVote" rows="3" placeholder="Enter your movie choice" required></textarea>
+                      <div class="invalid-feedback">Please tell us which movie you're voting for. Write few reasons why I should choose it.</div>
+                  </div>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">Send</button>
                     </form>
                 </div>
                 <div class="col-md-5 custom-color">
-                    <h4>Contact us!</h4>
+                    <h4>Contact me</h4>
                         <div class="d-flex">
                             <i class="bi bi-envelope-fill"></i>
-                            <p>amelavatres@movies.com</p>
+                            <p>sarablog@movies.com</p>
                         </div>
                         <div class="d-flex">
                             <i class="bi bi-browser-chrome"></i>

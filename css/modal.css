@@ -48,20 +48,56 @@
     text-align: center;
     margin-top: 20px;
 }
-.animated-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+
+.registration {
+    align-items: center;
+    background-color: #f0f0f0;
+    width: 330px; 
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.registration h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+.registration p {
+    text-align: left;
+    margin: 8px 0;
+    font-size: 16px;
+    color: #555555;
+}
+
+.registration input,
+.registration select {
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 5px solid #46ef57;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing:border-box;
+}
+
+.registration button {
+    width: 100%;
+    padding: 8px;
+    background-color: #7df66f;
+    color: #0c0101;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.animated-button:hover {
+.registration button:hover {
     background-color: #0056b3;
 }
-
 
 footer {  
     margin-top: auto;
@@ -72,12 +108,14 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    border-end-end-radius: 15%;
+    border-top-left-radius: 15%;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3); 
 }
 .footer-link {
     color: #00008b;
     text-decoration: cursive ;
-    margin: 0 10px;
+    margin: 0 10%;
     text-align: center;
 }
 .footer-link:hover {
@@ -178,3 +216,39 @@ footer {
 .nav-link {
     color: #fff;
 }
+body {
+        .background-color: #749aed;
+      }
+      .registration-container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px;
+        margin-top: 60px;
+        background-color: #fbfcff;
+      }
+      .registration {
+        background: rgb(179, 218, 248);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+      .registration h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .registration button {
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .registration button:hover {
+        background-color: #0056b3;
+      }
