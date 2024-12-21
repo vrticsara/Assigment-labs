@@ -252,3 +252,17 @@ body {
       .registration button:hover {
         background-color: #0056b3;
       }
+
+      .toggle-content {
+        display: none; 
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        margin-bottom: 10px;
+      }
+      
+      .toggle-content h5 {
+        margin-bottom: 10px;
+      }
+      
