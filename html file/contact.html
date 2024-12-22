@@ -45,7 +45,50 @@
           </div>
         </div>
       </nav> 
-</nav><!doctype html>
+      <button class="theme-switcher" onclick="toggleTheme()">Switch Theme</button>
+
+      <script>
+        function toggleTheme() {
+          const body = document.body;
+          const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
+    
+          if (currentTheme === "light") {
+            body.classList.remove("light-mode");
+            body.classList.add("dark-mode");
+          } else {
+            body.classList.remove("dark-mode");
+            body.classList.add("light-mode");
+          }
+        }
+      </script>
+      <style>
+        body.light-mode {
+          background-color: #ffffff;
+          color: #000000;
+        }
+    
+        body.dark-mode {
+          background-color: #121212;
+          color: #ffffff;
+        }
+    
+        .theme-switcher {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 10px 20px;
+          background-color: #007bff;
+          color: #ffffff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+    
+        .theme-switcher:hover {
+          background-color: #0056b3;
+        }
+      </style>
+      <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -111,20 +154,33 @@
   </table>
 
   <button class="btn btn-restore" id="restoreBtn" style="display: none;">Restore Deleted Items</button>
-
-  <script>
-    const movies = [
-      { id: 1, name: "Better Days" },
-      { id: 2, name: "Dil Se" },
-      { id: 3, name: "Sanam Re" },
-      { id: 4, name: "20th Century Girl" },
-      { id: 5, name: "Ten Years of Loving You" },
-    ];
-
-    const deletedMovies = []; 
-    const movieTable = document.getElementById("movieTable").querySelector("tbody");
+</body>
+<script>
+  const movieTable = document.getElementById("movieTable").querySelector("tbody");
     const successMsg = document.getElementById("successMsg");
     const restoreBtn = document.getElementById("restoreBtn");
+
+    let movies = [];
+    const deletedMovies = [];
+
+    // Fetch movies from JSON file
+    function fetchMovies() {
+      fetch('movies.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch movies');
+          }
+          return response.json();
+        })
+        .then(data => {
+          movies = data;
+          renderTable();
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          showSuccessMessage('Failed to load movies. Please try again later.', 'error');
+        });
+    }
 
     function renderTable() {
       movieTable.innerHTML = ""; 
@@ -144,9 +200,10 @@
       restoreBtn.style.display = deletedMovies.length > 0 ? "block" : "none";
     }
 
-    function showSuccessMessage(message) {
+    function showSuccessMessage(message, type = 'success') {
       successMsg.textContent = message;
       successMsg.style.display = "block";
+      successMsg.style.color = type === 'success' ? 'green' : 'red';
       setTimeout(() => {
         successMsg.style.display = "none";
       }, 3000);
@@ -185,10 +242,8 @@
 
     restoreBtn.addEventListener("click", restoreMovies);
     
-    renderTable();
-  </script>
-</body>
-</html>
+    fetchMovies();
+</script>
 <footer>
   <div class="row">
       <div class="col-md-12-text-start-text-align-center">

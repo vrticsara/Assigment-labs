@@ -28,6 +28,52 @@
           </div>
         </div>
       </nav>   
+      <button class="theme-switcher" onclick="toggleTheme()">Switch Theme</button>
+
+  <script>
+    // Function to toggle the theme
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
+
+      if (currentTheme === "light") {
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
+      } else {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+      }
+    }
+  </script>
+  <style>
+    /* Light Theme Styles */
+    body.light-mode {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    /* Dark Theme Styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .theme-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .theme-switcher:hover {
+      background-color: #0056b3;
+    }
+  </style>
     <div class="container mt-5">
       <div class="card">
         <div class="card-header bg-primary text-white">
