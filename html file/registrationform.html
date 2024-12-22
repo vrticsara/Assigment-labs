@@ -31,7 +31,6 @@
       <button class="theme-switcher" onclick="toggleTheme()">Switch Theme</button>
 
   <script>
-    // Function to toggle the theme
     function toggleTheme() {
       const body = document.body;
       const currentTheme = body.classList.contains("light-mode") ? "light" : "dark";
@@ -46,13 +45,11 @@
     }
   </script>
   <style>
-    /* Light Theme Styles */
     body.light-mode {
       background-color: #ffffff;
       color: #000000;
     }
 
-    /* Dark Theme Styles */
     body.dark-mode {
       background-color: #121212;
       color: #ffffff;
@@ -81,7 +78,7 @@
         </div>
         <div class="card-body">
 
-          <!--AJAX--> 
+          <!--AJAX ona forma-->  
           <form id="registrationForm">
             <div class="mb-3">
               <label for="nickname" class="form-label">Nickname:</label>
