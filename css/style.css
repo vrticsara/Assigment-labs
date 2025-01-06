@@ -208,3 +208,149 @@ footer {
     transition: 0.75s ease-out;
   }
 }
+.movie-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.movie-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+.heart-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.heart-rating span {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.heart-rating span:hover,
+.heart-rating span.active {
+  color: red;
+}
+
+.movie-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.movie-card {
+  text-align: center;
+  width: 250px;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  overflow: auto;
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal .close:hover {
+  color: #bbb;
+}
+
+#caption {
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 16px;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.navbar {
+  background-color: #007bff;
+}
+
+.card {
+  background-color: #f8f9fa;
+  color: #000000;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-theme .navbar {
+  background-color: #333333;
+}
+
+body.dark-theme .card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+button {
+  cursor: pointer;
+}
