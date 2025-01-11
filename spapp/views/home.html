@@ -16,34 +16,90 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark custom-blue">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/html file/home.html">Sara's Movie Blog</a>
+    <li class="nav-item"><button class="nav-link" onclick="navigateTo('saras-movie-blog')">Sara's Movie Blog</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#hindi-movies">Hindi Movies</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#chinese-movies">Chinese Movies</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#korean-movies">Korean Movies</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#hindi-movies">Hindi Movies</a>
-        <li class ="nav-item">
-          <a class="nav-link" href="/views/registration.html">Registration</a>
-        </li>
-        </li>
-        </li>
+      <ul class="navbar-nav"><ul class="navbar-nav">
+        <li class="nav-item"><button class="nav-link" onclick="navigateTo('hindi-movies')">Hindi Movies</button></li>
+        <li class="nav-item"><button class="nav-link" onclick="navigateTo('chinese-movies')">Chinese Movies</button></li>
+        <li class="nav-item"><button class="nav-link" onclick="navigateTo('korean-movies')">Korean Movies</button></li>
+        <li class="nav-item"><button class="nav-link" onclick="navigateTo('about-me')">About Me</button></li>
+        <li class="nav-item"><button class="nav-link" onclick="navigateTo('register')">Register</button></li>
+        <li class="nav-item"><button class="nav-link" onclick="navigateTo('vote')">VOTE</button></li>
       </ul>
     </div>
   </div>
 </nav>
-<button class="theme-switcher" onclick="toggleTheme()">Switch Theme</button>
 
+
+<script>
+  const views = {
+    home: `<h1>Welcome to Sara's Movie Blog</h1><p>Explore top movies and vote for your favorites!</p>`,
+    about: `<h1>About Me</h1><p>This blog showcases my love for Asian movies. Join me in exploring the best movies from around the world!</p>`,
+    "hindi-movies": `
+      <h1>Hindi Movies</h1>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Dil_Se.." target="_blank">Dil Se</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Om_Shanti_Om" target="_blank">Om Shanti Om</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Sanam_Re" target="_blank">Sanam Re</a></li>
+      </ul>`,
+      
+    vote: `
+      <h1>Vote for Your Favorite Movie</h1>
+      <form id="voteForm">
+        <label for="movie">Movie Name:</label>
+        <input type="text" id="movie" name="movie" required>
+        <button type="submit">Submit Vote</button>
+      </form>
+      <div id="voteMessage"></div>
+    `,
+  };
+  function loadView(view) {
+    const container = document.getElementById("view-container");
+    container.innerHTML = views[view] || `<h1>404 - Page Not Found</h1>`;
+    highlightNav(view);
+
+    if (view === "vote") {
+      document.getElementById("voteForm").addEventListener("submit", handleVoteSubmit);
+    }
+  }
+
+  function navigateTo(view) {
+    window.location.hash = view;
+    loadView(view);
+  }
+
+  function highlightNav(activeView) {
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach((link) => link.classList.remove("active-link"));
+    const activeLink = [...navLinks].find((link) =>
+      link.textContent.toLowerCase().includes(activeView)
+    );
+    if (activeLink) activeLink.classList.add("active-link");
+  }
+  function handleVoteSubmit(event) {
+    event.preventDefault();
+    const movie = event.target.movie.value;
+    const messageDiv = document.getElementById("voteMessage");
+    messageDiv.innerHTML = `<p>Thank you for voting for <strong>${movie}</strong>!</p>`;
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+    document.body.classList.toggle("dark-mode");
+  }
+  window.addEventListener("load", () => {
+    const initialView = window.location.hash.replace("#", "") || "home";
+    loadView(initialView);
+  });
+
+  window.addEventListener("hashchange", () => {
+    const view = window.location.hash.replace("#", "");
+    loadView(view);
+  });
+</script>
 <script>
   function toggleTheme() {
     const body = document.body;
@@ -397,211 +453,6 @@
         var content = document.getElementById(contentId);
         content.style.display = content.style.display === 'none' ? 'block' : 'none';
     }
-</script>
-<style>
-  .custom-footer {
-    background-color: #7CD973;
-    color: white;
-  }
-  .custom-footer a {
-    color: white;
-    text-decoration: none;
-  }
-  .custom-footer a:hover {
-    text-decoration: underline;
-  }
-</style>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Top 10 movies per choice of new followers:</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-    th {
-      background-color: #007bff;
-      color: white;
-    }
-    .btn {
-      padding: 5px 10px;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .btn-edit {
-      background-color: #ffc107;
-      color: black;
-    }
-    .btn-delete {
-      background-color: #dc3545;
-      color: white;
-    }
-    .btn-restore {
-      background-color: #28a745;
-      color: white;
-    }
-    .success-msg {
-      color: green;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>Top 10 movies per choice of new followers:</h1>
-  <p class="success-msg" id="successMsg" style="display: none;"></p>
-  <table id="movieTable">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Movie of choice</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-
-  <button class="btn btn-restore" id="restoreBtn" style="display: none;">Restore Deleted Items</button>
-</body>
-<script>
-  const movieTable = document.getElementById("movieTable").querySelector("tbody");
-    const successMsg = document.getElementById("successMsg");
-    const restoreBtn = document.getElementById("restoreBtn");
-
-    let movies = [];
-    const deletedMovies = [];
-
-    function fetchMovies() {
-      fetch('movies.json')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to fetch movies');
-          }
-          return response.json();
-        })
-        .then(data => {
-          movies = data;
-          renderTable();
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          showSuccessMessage('Failed to load movies. Please try again later.', 'error');
-        });
-    }
-
-    function renderTable() {
-      movieTable.innerHTML = ""; 
-      movies.forEach((movie, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${index + 1}</td>
-          <td>${movie.name}</td>
-          <td>
-            <button class="btn btn-edit" onclick="editMovie(${movie.id})">Edit</button>
-            <button class="btn btn-delete" onclick="deleteMovie(${movie.id})">Delete</button>
-          </td>
-        `;
-        movieTable.appendChild(row);
-      });
-
-      restoreBtn.style.display = deletedMovies.length > 0 ? "block" : "none";
-    }
-
-    function showSuccessMessage(message, type = 'success') {
-      successMsg.textContent = message;
-      successMsg.style.display = "block";
-      successMsg.style.color = type === 'success' ? 'green' : 'red';
-      setTimeout(() => {
-        successMsg.style.display = "none";
-      }, 3000);
-    }
-
-    function deleteMovie(id) {
-      const index = movies.findIndex((movie) => movie.id === id);
-      if (index !== -1) {
-        deletedMovies.push(movies[index]); 
-        movies.splice(index, 1); 
-        renderTable();
-        showSuccessMessage("Movie deleted successfully!");
-      }
-    }
-
-    function restoreMovies() {
-      if (deletedMovies.length > 0) {
-        deletedMovies.forEach((movie) => movies.push(movie));
-        deletedMovies.length = 0; 
-        renderTable();
-        showSuccessMessage("Movies restored successfully!");
-      }
-    }
-
-    function editMovie(id) {
-      const movie = movies.find((movie) => movie.id === id);
-      if (movie) {
-        const newName = prompt("Edit movie name:", movie.name);
-        if (newName) {
-          movie.name = newName.trim();
-          renderTable();
-          showSuccessMessage("Movie edited successfully!");
-        }
-      }
-    }
-
-    restoreBtn.addEventListener("click", restoreMovies);
-    
-    fetchMovies();
-</script>
-<div class="movie-search">
-  <input type="text" id="movie-title" placeholder="Search for an Asian movie..." />
-  <button id="search-button">Search</button>
-</div>
-<div id="movie-info"></div>
-<script>
-document.getElementById("search-button").addEventListener("click", async () => {
-  const movieTitle = document.getElementById("movie-title").value.trim();
-  const apiKey = "5b4583b0";
-  const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(movieTitle)}`;
-
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-
-    if (data.Response === "True") {
-      displayMovieInfo(data);
-    } else {
-      document.getElementById("movie-info").innerHTML = `<p>Movie not found.</p>`;
-    }
-  } catch (error) {
-    console.error("Error fetching movie data:", error);
-    document.getElementById("movie-info").innerHTML = `<p>Error fetching movie data. Please try again later.</p>`;
-  }
-});
-
-function displayMovieInfo(movie) {
-  document.getElementById("movie-info").innerHTML = `
-    <h2>${movie.Title} (${movie.Year})</h2>
-    <img src="${movie.Poster}" alt="${movie.Title}" style="width:200px;" />
-    <p><strong>Genre:</strong> ${movie.Genre}</p>
-    <p><strong>Director:</strong> ${movie.Director}</p>
-    <p><strong>Actors:</strong> ${movie.Actors}</p>
-    <p><strong>Plot:</strong> ${movie.Plot}</p>
-  `;
-}
 </script>
 
 <footer>
