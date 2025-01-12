@@ -1,0 +1,28 @@
+<div class="container"></div>
+    <h1>PAGE 1</h1>
+
+
+    <article>
+        <h2>Welcome to Sara's movie blog</h2>
+        <p>On this website you can log in and then vote for your favorite movies.</p>
+        <p>Only by voting you are not only contributing for the movie to be choosen, you are also making it more popular than it was.</p>
+    </article>
+    
+</div>
+<script>
+    var app = $.spapp({
+        defaultView: "#page1",
+        templateDir: "./spapp/views/"
+
+    });
+
+
+    app.run();
+
+    const Test = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    if (!Test) {
+
+        window.location.href = '#page4';
+    }
+</script>

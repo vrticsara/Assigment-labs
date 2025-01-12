@@ -1,0 +1,26 @@
+<div class="container"></div>
+    <h1>PAGE 1</h1>
+
+
+    <article>
+        <h2>VOTE</h2>
+        <p>Vote for your favorite movie.</p>
+    </article>
+</div>
+<script>
+    var app = $.spapp({
+        defaultView: "#page4",
+        templateDir: "./spapp/views/"
+
+    });
+
+
+    app.run();
+
+    const Test = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    if (!Test) {
+
+        window.location.href = '#page4';
+    }
+</script>

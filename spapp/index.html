@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara's movie blog</title>
+    <link rel="stylesheet" href=".spapp/assets/css/spapp.css">
+    <link rel="stylesheet" href=".spapp/assets/css/custom.css">
+    <link rel="stylesheet" href=".spapp/assets/css/style.css">
+
+
+    <script src="./assets/java/jquery.min.js"></script>
+    <script src="./assets/java/jquery.spapp.min.js"></script>
+    <script src="./assets/java/script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#page1" class="nav-link">Home</a></li>
+                <li><a href="#page2" class="nav-link">About Me</a></li>
+                <li><a href="#page3" class="nav-link">Register</a></li>
+                <li><a href="#page4" class="nav-link">VOTE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="pageContent">
+        <main id="spapp" role="main">
+            <section id="page1" data-load="page1.html">
+                <h1>Home</h1>
+            </section>
+            <section id="page2" data-load="page2.html">
+                <h1>About</h1>
+            </section>
+            <section id="page3" data-load="page3.html">
+                <h1>Register</h1>
+            </section>
+            <section id="page4" data-load="page4.html">
+                <h1>VOTE</h1>
+            </section>
+        </main>
+      </section>
+
+    <footer>
+        <h1>Sara IT </h1>
+        <address>Contact: <a href="mailto:me@example.com">Mail me:</a></address>
+    </footer>
+
+    <script>
+        var app = $.spapp({
+            defaultView: "#page1",
+            templateDir: "./spapp/views/"
+
+        });
+
+
+        app.run();
+
+        const Test = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (!Test) {
+
+            window.location.href = '#page1';
+        }
+    </script>
+</body>
+
+</html>
+
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #0073e6;
+    padding: 20px 0;
+    color: white;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  header nav ul li {
+    display: inline;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    background-color: #005bb5;
+    border-radius: 5px;
+  }
+  
+  #pageContent {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  main section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  main section.active {
+    display: block;
+  }
+  
+  main section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0073e6;
+  }
+  
+  footer {
+    background-color: #0073e6;
+    padding: 15px 0;
+    color: white;
+  }
+  
+  footer h1, footer address {
+    margin: 5px 0;
+  }
+</style>

@@ -1,0 +1,28 @@
+<div class="container"></div>
+    <h1>PAGE 1</h1>
+
+
+    <article>
+        <h2>About Me</h2>
+       <p>Hello to all of my new followers. I am Sara Vrtić, the creator of Sara's Movie Blog. I thought for a while about my project topic and what am I going to do about all of this, but at the end my heart decided on doing a little something which will showcase my love towards Asian culture, in general. I made this website as to share my favorite movies, exchange recommendations and show the world beauty of Asian movies in hopes of meeting more movie enthusiasts like me. When I'm not watching movies, I enjoy exploring different cultures, reading about supernatural stuff, and experimenting with web design. I want to thank you for awesome recommendations, thank you for voting and in general for great support.</p>
+        <p>I also wanted to add how my about page is constantly changing video intro as requested from other users in system, but every end of the year for two months, both novemeber and december I put up my own favorite movie of that year. For this 2024 year It is hindi movie Dil Se which showcases deep and unexpected love between Amar and Meghna, two people who never got to be properly together, but the whole time since they met each other and until their demise, they only wanted one another.</p>
+    </article>
+  
+</div>
+<script>
+    var app = $.spapp({
+        defaultView: "#page2",
+        templateDir: "./spapp/views/"
+
+    });
+
+
+    app.run();
+
+    const Test = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    if (!Test) {
+
+        window.location.href = '#page4';
+    }
+</script>
