@@ -11,9 +11,9 @@
     <link rel="stylesheet" href=".spapp/assets/css/style.css">
 
 
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/jquery.spapp.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/java/jquery.min.js"></script>
+    <script src="./assets/java/jquery.spapp.min.js"></script>
+    <script src="./assets/java/script.js"></script>
 
 </head>
 
@@ -35,7 +35,7 @@
                 <h1>Home</h1>
             </section>
             <section id="page2" data-load="page2.html">
-                <h1>About Me</h1>
+                <h1>About</h1>
             </section>
             <section id="page3" data-load="page3.html">
                 <h1>Register</h1>
@@ -50,6 +50,27 @@
         <h1>Sara IT </h1>
         <address>Contact: <a href="mailto:me@example.com">Mail me:</a></address>
     </footer>
+
+    <script>
+        var app = $.spapp({
+            defaultView: "#page1",
+            templateDir: "./spapp/views/"
+
+        });
+
+
+        app.run();
+
+        const Test = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (!Test) {
+
+            window.location.href = '#page1';
+        }
+    </script>
+</body>
+
+</html>
 
     <style>
 * {
@@ -131,23 +152,3 @@
     margin: 5px 0;
   }
 </style>
-    <script>
-        var app = $.spapp({
-            defaultView: "#page1",
-            templateDir: "./spapp/views/"
-
-        });
-
-
-        app.run();
-
-        const Test = JSON.parse(localStorage.getItem('loggedInUser'));
-
-        if (!Test) {
-
-            window.location.href = '#page4';
-        }
-    </script>
-</body>
-
-</html>
